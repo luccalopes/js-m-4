@@ -1,0 +1,54 @@
+programação orientada a objetos
+
+um objeto pode ser uma variável que contém principal conteúdo as chaves {}, e dentro dessas chaves, temos propriedades, exemplo: 
+
+const book = {
+    name: 'Eragon',
+    pages: 468, 
+    published: true,
+    inStock: 20,
+    tags: ['fantasy', 'adventure', 'medieval'],
+    author: {
+        name: 'Christopher Paolini'
+    },
+    addOnStock(quantity) {
+        this.inStock += quantity
+    }
+}
+
+no escopo principal do objeto, temos várias propriedades como o nome do livro, quantidade de páginas, se ja foi publicado, quantidade no estoque
+
+também temos uma propriedade contendo um array com os gêneros do livro, na propriedade author temos um outro objeto e por último temos uma função para adicionar no estoque, essa função tem como parâmetro a quantidade e, dentro desta função, temos acesso diretamente a propriedade inStock para somar com a quantidade que será adicionada quando a função addOnStock for chamada, com o número definido como parâmetro para a quantidade.
+
+classes e instâncias
+
+é comum que os arquivos baseados no nome das classes sejam nomeados com a primeira letra maiúscula
+
+para criar uma classe, basta utilizar a palavra reservada 'class' e nomeá-la, e após isso colocar as chaves e então a classe estará criada, e então ficará vazia mesmo
+após isso, podemos criar uma const com o nome do 'livro' e usar o 'new' seguido do nome da classe. exemplo de sintaxe:
+
+class Book = {
+
+}
+
+const eragon = new Book()
+
+com isso, teremos uma função construtora que retornará um objeto do tipo Book, a classe é o 'Book' e a instância é o 'eragon'
+
+para implementar atributos na classe, começamos inserindo o método 'constructor(){}' e os parâmetros que colocarmos no constructor serão os parâmetros que passaremos na hora de instanciar o objeto, então com o parâmetro passado, teremos dentro do constructor o acesso ao 'this', então o 'this' faz referencia ao objeto atual da instância 
+
+sintaxe: 
+    class Book = {
+    constructor(title) {
+        this.title = title
+    }
+    publish() {
+        this.published = true
+    }
+}
+
+const eragon = new Book('Eragon')
+
+para adicionar os métodos, não precisamos fazer dentro do método constructor mas sim fora dela, como foi feito no código acima com a função 'publish()'
+
+
