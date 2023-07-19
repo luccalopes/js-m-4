@@ -1,0 +1,3 @@
+o encapsulamento serve para impedir que certos atributos ou métodos de uma classe sejam acessíveis fora dessa classe
+
+para definir um atributo ou método como privado utilizamos uma hashtag # no começo do seu nome, além de definir fora do construtor os atributos selecionados também com hashtag, fazemos isso logo no começo das chaves antes do construtor, basta escrever o nome do atributo com a hashtag no início da classe antes do construtor
