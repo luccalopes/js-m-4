@@ -1,0 +1,32 @@
+iniciar criando uma pasta dentro da pasta principal para as classes
+dentro da pasta classes, criaremos o arquivo User.js e inicia-la com  a sintaxe commonjs, então criar uma classe User
+dentro da classe, indicar um construtor e, dentro do construtor, passar os parametros name, email, password e setá-los dentro do construtor
+
+agora, criar a classe Author e iniciá-lo da mesma forma da classe anterior, porém com os parâmetros name, nationality, bio
+dentro do construtor, setar os atributos
+
+agora, criar uma classe para Product, e também inicia-lo do mesmo jeito, com os parametros name, description, price, inStock = 0 e setá-los
+
+criar um método para adicionar ao estoque na classe Product, com a quantidade como parametro, que recebera um this.inStock += quantity
+
+depois criar um metodo para remover do estoque, fazendo ao contrário do metodo anterior
+
+agora, criar um arquivo para a classe Book, na mesma sintaxe do commonjs, essa classe irá ser filha da classe Product, logo, precisara importar a classe Product
+
+o construtor do livro recebera como parametros um title, synopsis, genre, author, description, price, inStock = 0
+então chamar o construtor de Product usando o super, então o parametro padrão name do Product será sempre `'Livro ${title}`, description, price, inStock
+o resto dos parametros da classe Book serão definidos dentro do construtor
+
+agora, criar um arquivo para a classe Posters, que sera um outro produto que a livraria trabalha, que herdará de Product e inserir um construtor com name, description, height, width, price, inStock como parametros, e depois pegar o super da classe Product do mesmo jeito que a classe anterior, e então definir os atributos especificos do Posters
+
+agora, criar outro arquivo para a classe Order, que sera uma classe para armazenar os pedidos, esta classe não será herdeira de nada, então criar atributos privados, que serão total, items, user
+
+abrir um construtor, que receberá items, user como parametros items, user
+teremos um items.forEach(({product, quantity}) => {
+    se a quantidade do pedido for maior que o produto em estoque {
+        throw new Error('quantidade insuficiente em estoque')
+    }
+})
+this.#items = items
+this.#user = user
+this.#total = items.reduce(sum, {product, quantity}) => sum + (product.price * quantity), 0
